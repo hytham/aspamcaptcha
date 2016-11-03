@@ -15,13 +15,13 @@ var randomeNumbers = (function () {
         if (this.state) {
             re = "required";
         }
-        var html = "<div class='row' data-isplayresult='" + this.state + "' ><input class='w-radio-input' id='radio' type='radio' name='radio' value='Radio' data-name='Radio' " + re + "/>";
+        var html = "<div class='row' data-isplayresult='" + this.state + "' ><input class='w-radio-input' id='radio' type='radio' name='radio' value='Radio' data-name='Radio' " + re + " checked='false'/>";
         html += "<label class='w-form-label' for='radio'>" + this.x + "</label></div>";
         return html;
     };
     return randomeNumbers;
 }());
-var aspamaptcha = (function () {
+var aspamcaptcha = (function () {
     // This constructor will take the number of selections to be displayed
     // total_selections : The total options to select from
     // wrongccsclass : The wrong css class 
@@ -29,7 +29,7 @@ var aspamaptcha = (function () {
     // dividtarg: The div target that will host the controllers
     // The minmum range
     // The maximum range
-    function aspamaptcha(total_selections, wrongccsclass, rightcssclass, dividtarg, // The aprent div tag to ebbed 
+    function aspamcaptcha(total_selections, wrongccsclass, rightcssclass, dividtarg, // The aprent div tag to ebbed 
         min, // The min number to generate for the randome number
         max // The max number to generate for the randome number
         ) {
@@ -56,7 +56,7 @@ var aspamaptcha = (function () {
     }
     ;
     // This function will Render the full 
-    aspamaptcha.prototype.Render = function () {
+    aspamcaptcha.prototype.Render = function () {
         var html = "<div>";
         html = "<label class='humano'> Are you human? Please check " + this.x + " + " + this.y + " ?</label>";
         for (var i = 0; i < this.randomeNumbers.length; i++) {
@@ -100,9 +100,9 @@ var aspamaptcha = (function () {
             }
         }
     };
-    return aspamaptcha;
+    return aspamcaptcha;
 }());
 (function () {
-    new aspamaptcha().Render();
+    new aspamcaptcha().Render();
 })();
-//# sourceMappingURL=aspamaptcha.js.map
+//# sourceMappingURL=aspamcaptcha.js.map

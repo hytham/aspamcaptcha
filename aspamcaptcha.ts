@@ -20,14 +20,14 @@ class randomeNumbers{
             re="required";
         }
         
-        let html="<div class='row' data-isplayresult='"+this.state+"' ><input class='w-radio-input' id='radio' type='radio' name='radio' value='Radio' data-name='Radio' "+re+"/>";
+        let html="<div class='row' data-isplayresult='"+this.state+"' ><input class='w-radio-input' id='radio' type='radio' name='radio' value='Radio' data-name='Radio' "+re+" checked='false'/>";
         html+="<label class='w-form-label' for='radio'>"+this.x+"</label></div>";
         
         return html;
     }
 
 }
- class aspamaptcha{
+ class aspamcaptcha{
 
     x:number;
     y:number;
@@ -136,7 +136,7 @@ class randomeNumbers{
     
 }
 (function(){
-    new aspamaptcha().Render();
+    new aspamcaptcha().Render();
 })();
 
 
