@@ -19,7 +19,7 @@ class randomeNumbers {
             re = "required";
         }
 
-        let html = "<div class='row' data-isplayresult='" + this.state + "' ><input class='w-radio-input' id='radio' type='radio' name='radio' value='Radio' data-name='Radio' " + re + " />";
+        let html = "<div data-isplayresult='" + this.state + "' ><input class='w-radio-input' id='radio' type='radio' name='radio' value='Radio' data-name='Radio' " + re + " />";
         html += "<label class='w-form-label' for='radio'>    " + this.x + "  </label></div>";
 
         return html;
@@ -76,12 +76,12 @@ class aspamcaptcha {
 
     // This function will Render the full 
     Render(): void {
-        let html = "<div>";
+        let html = "";
         html = "<label class='humano'> Are you human? Please check " + this.x + " + " + this.y + " ?</label>";
         for (var i = 0; i < this.randomeNumbers.length; i++) {
             html += "<div class='w-radio radio' >";
             html += this.randomeNumbers[i].toHtml();
-            html += "</div>";
+            html += "";
         }
         html += "</div>"
         var child = document.createElement("div");
@@ -127,6 +127,8 @@ class aspamcaptcha {
     }
 
 }
-(function () {
+
+window.onload=function(){
     new aspamcaptcha().Render();
-})();
+
+}

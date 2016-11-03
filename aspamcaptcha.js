@@ -68,8 +68,7 @@ var aspamcaptcha = (function () {
         var child = document.createElement("div");
         child.innerHTML = html;
         var p = document.getElementById(this.divtag);
-        if (typeof (p) == "undefined" || p == null) {
-        }
+        if (typeof (p) == "undefined" || p == null) { }
         else {
             p.appendChild(child);
             // this will response a clidk when a radio button is clicked
@@ -102,7 +101,7 @@ var aspamcaptcha = (function () {
     };
     return aspamcaptcha;
 }());
-(function () {
+window.onload = function () {
     new aspamcaptcha().Render();
-})();
+};
 //# sourceMappingURL=aspamcaptcha.js.map
