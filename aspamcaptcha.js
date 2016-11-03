@@ -15,8 +15,8 @@ var randomeNumbers = (function () {
         if (this.state) {
             re = "required";
         }
-        var html = "<div class='row' data-isplayresult='" + this.state + "' ><input class='w-radio-input' id='radio' type='radio' name='radio' value='Radio' data-name='Radio' " + re + " checked='false'/>";
-        html += "<label class='w-form-label' for='radio'>" + this.x + "</label></div>";
+        var html = "<div class='row' data-isplayresult='" + this.state + "' ><input class='w-radio-input' id='radio' type='radio' name='radio' value='Radio' data-name='Radio' " + re + " />";
+        html += "<label class='w-form-label' for='radio'>    " + this.x + "  </label></div>";
         return html;
     };
     return randomeNumbers;
@@ -87,7 +87,7 @@ var aspamcaptcha = (function () {
                     var ch = document.createElement("span");
                     ch.setAttribute("class", "captchmsg");
                     if (param == "false") {
-                        event.target.value = false;
+                        event.target.checked = false;
                         ch.setAttribute("style", "color:red");
                         ch.innerText = "    wrong answer    ";
                     }
