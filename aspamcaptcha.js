@@ -15,7 +15,7 @@ var randomeNumbers = (function () {
         if (this.state) {
             re = "required";
         }
-        var html = "<div class='row' data-isplayresult='" + this.state + "' ><input class='w-radio-input' id='radio' type='radio' name='radio' value='Radio' data-name='Radio' " + re + " />";
+        var html = "<div data-isplayresult='" + this.state + "' ><input class='w-radio-input' id='radio' type='radio' name='radio' value='Radio' data-name='Radio' " + re + " />";
         html += "<label class='w-form-label' for='radio'>    " + this.x + "  </label></div>";
         return html;
     };
@@ -57,12 +57,12 @@ var aspamcaptcha = (function () {
     ;
     // This function will Render the full 
     aspamcaptcha.prototype.Render = function () {
-        var html = "<div>";
+        var html = "";
         html = "<label class='humano'> Are you human? Please check " + this.x + " + " + this.y + " ?</label>";
         for (var i = 0; i < this.randomeNumbers.length; i++) {
             html += "<div class='w-radio radio' >";
             html += this.randomeNumbers[i].toHtml();
-            html += "</div>";
+            html += "";
         }
         html += "</div>";
         var child = document.createElement("div");
